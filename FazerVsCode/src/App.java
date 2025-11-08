@@ -24,127 +24,44 @@ public class App {
     public static void main(String[] args) throws Exception {
         funcao_teste();
 
-        Operadores op = new Operadores();
+        teste op = new teste();
 
+        // Demonstrando uso do atributo público
+        System.out.println("\n--- Manipulação do atributo1 ---");
+        op.mostrarAtributo(); 
+        op.alterarAtributo(25);
+        op.mostrarAtributo();
+
+        // --- Demonstração dos operadores
         System.out.println("\n=== CALCULADORA DE OPERADORES ===");
 
-        // EXEMPLOS DA ATIVIDADE ORIGINAL
-        System.out.println("O Resultado é: " + op.adicao(10, 5));
-        System.out.println("O Resultado é: " + op.subtracao(10, 5));
-        System.out.println("O Resultado é: " + op.multiplicacao(10, 5));
-        System.out.println("O Resultado é: " + op.divisao(10, 5));
+        // Operações aritméticas
+        System.out.println("O Resultado (adição) é: " + op.adicao(10f, 5f));
+        System.out.println("O Resultado (subtração) é: " + op.subtracao(10f, 5f));
+        System.out.println("O Resultado (multiplicação) é: " + op.multiplicacao(10f, 5f));
+        System.out.println("O Resultado (divisão) é: " + op.divisao(10f, 5f));
 
-        // EXEMPLOS DOS NOVOS MÉTODOS
-        System.out.println("\n--- Operadores de Atribuição ---");
-        System.out.println("Atribuição: " + op.atribuicao(2, 5));
-        System.out.println("Mais igual: " + op.maisIgual(10, 3));
-        System.out.println("Menos igual: " + op.menosIgual(10, 3));
-        System.out.println("Vezes igual: " + op.vezesIgual(10, 3));
-        System.out.println("Divisão igual: " + op.divisaoIgual(10, 2));
+        // Operadores de atribuição (simulados)
+        System.out.println("\n--- Operadores de Atribuição (simulados) ---");
+        System.out.println("Atribuição (simulada): " + op.atribuicao(2f, 5f));
+        System.out.println("Mais igual (v1 += v2): " + op.maisIgual(10f, 3f));
+        System.out.println("Menos igual (v1 -= v2): " + op.menosIgual(10f, 3f));
+        System.out.println("Vezes igual (v1 *= v2): " + op.vezesIgual(10f, 3f));
+        System.out.println("Divisão igual (v1 /= v2): " + op.divisaoIgual(10f, 2f));
 
+        // Operadores lógicos
         System.out.println("\n--- Operadores Lógicos ---");
         System.out.println("true && false = " + op.eLogico(true, false));
         System.out.println("true || false = " + op.ouLogico(true, false));
         System.out.println("!true = " + op.naoLogico(true));
 
+        // Operadores de comparação
         System.out.println("\n--- Operadores de Comparação ---");
-        System.out.println("5 > 2 ? " + op.maiorQue(5, 2));
-        System.out.println("5 < 2 ? " + op.menorQue(5, 2));
-        System.out.println("5 == 5 ? " + op.igualA(5, 5));
-        System.out.println("5 != 2 ? " + op.diferenteDe(5, 2));
-        System.out.println("5 >= 2 ? " + op.maiorOuIgual(5, 2));
-        System.out.println("5 <= 2 ? " + op.menorOuIgual(5, 2));
-    }
-}
-
-class Operadores {
-
-    // Operações aritméticas básicas
-    public float adicao(float v1, float v2) {
-        return v1 + v2;
-    }
-
-    public float subtracao(float v1, float v2) {
-        return v1 - v2;
-    }
-
-    public float multiplicacao(float v1, float v2) {
-        return v1 * v2;
-    }
-
-    public float divisao(float v1, float v2) {
-        if (v2 == 0) {
-            System.out.println("Erro: divisão por zero!");
-            return Float.NaN;
-        }
-        return v1 / v2;
-    }
-
-    // Operadores de atribuicao
-    public float atribuicao(float v1, float v2) {
-        v1 = v2;
-        return v1;
-    }
-
-    public float maisIgual(float v1, float v2) {
-        v1 += v2;
-        return v1;
-    }
-
-    public float menosIgual(float v1, float v2) {
-        v1 -= v2;
-        return v1;
-    }
-
-    public float vezesIgual(float v1, float v2) {
-        v1 *= v2;
-        return v1;
-    }
-
-    public float divisaoIgual(float v1, float v2) {
-        if (v2 == 0) {
-            System.out.println("Erro: divisão composta por zero!");
-            return Float.NaN;
-        }
-        v1 /= v2;
-        return v1;
-    }
-
-    // Operadores logicos
-    public boolean eLogico(boolean a, boolean b) {
-        return a && b;
-    }
-
-    public boolean ouLogico(boolean a, boolean b) {
-        return a || b;
-    }
-
-    public boolean naoLogico(boolean a) {
-        return !a;
-    }
-
-    // Operadores de comparacao
-    public boolean maiorQue(float v1, float v2) {
-        return v1 > v2;
-    }
-
-    public boolean menorQue(float v1, float v2) {
-        return v1 < v2;
-    }
-
-    public boolean igualA(float v1, float v2) {
-        return v1 == v2;
-    }
-
-    public boolean diferenteDe(float v1, float v2) {
-        return v1 != v2;
-    }
-
-    public boolean maiorOuIgual(float v1, float v2) {
-        return v1 >= v2;
-    }
-
-    public boolean menorOuIgual(float v1, float v2) {
-        return v1 <= v2;
+        System.out.println("5 > 2 ? " + op.maiorQue(5f, 2f));
+        System.out.println("5 < 2 ? " + op.menorQue(5f, 2f));
+        System.out.println("5 == 5 ? " + op.igualA(5f, 5f));
+        System.out.println("5 != 2 ? " + op.diferenteDe(5f, 2f));
+        System.out.println("5 >= 2 ? " + op.maiorOuIgual(5f, 2f));
+        System.out.println("5 <= 2 ? " + op.menorOuIgual(5f, 2f));
     }
 }
